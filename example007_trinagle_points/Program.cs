@@ -28,7 +28,12 @@ int count = 0;
 
 while (count < 10000)
 {
-    int what = new Random().Next(0, 3); 
+    int position = 0; // Exclude the top a on the first iteration
+    if (count == 0)
+    {
+        position = 1;
+    }
+    int what = new Random().Next(position, 3); 
     if (what == 0)
     {
         x = (x + xa) / 2;
